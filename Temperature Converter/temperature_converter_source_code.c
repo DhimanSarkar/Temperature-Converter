@@ -1,3 +1,5 @@
+// Created by ShadyE
+// Copyright (c) StanLab 2016
 // Temperature Converter C Programme
 
 #include <stdio.h>
@@ -5,37 +7,46 @@
 #include <stdlib.h>
 
 
+
+
 // Centigrade to Farenhite Converter Function
 centigrade_to_farentite()
 {
-	int c;
-	printf("Please enter temperature in Centigrade scale :: ");
-	scanf_s("%d", &c);
-	int f = ((c * 9) / 5) + 32;
-	printf("\n\t\t\t\t\t%d degree Centigrade = %d degree Farenhite", c, f);
-	int K = c + 273.16;
-	printf("\n\t\t\t\t\t***Temperature in Kelvine Scale is :: %d K", K);
+	float c;
+	printf("\nPlease enter temperature in Centigrade scale :: ");
+	scanf_s("%f", &c);
+	float f = ((c * 9) / 5) + 32;
+	printf("\n\t\t\t\t\t%f degree Centigrade = %f degree Farenhite", c, f);
+	double K = c + 273.16;
+	printf("\n\t\t\t\t\t***Temperature in Kelvine Scale is :: %f K", K);
 }
+
+
 
 
 // Farenhite to Centigrade Converter Function
 farenhite_to_centigrade()
 {
-	int f;
-	printf("Please enter the temperature in Farenhite scale :: ");
-	scanf_s("%d", &f);
-	int c = 5 * (f - 32) / 9;
-	printf("\n\t\t\t\t\t%d degree Farenhite = %d degree Centigrade", f, c);
-	int K = c + 273.16;
-	printf("\n\t\t\t\t\t***Temperature in Kelvine Scale is :: %d K", K);
+	float f;
+	printf("\nPlease enter the temperature in Farenhite scale :: ");
+	scanf_s("%f", &f);
+	float c = 5 * (f - 32) / 9;
+	printf("\n\t\t\t\t\t%f degree Farenhite = %f degree Centigrade", f, c);
+	double K = c + 273.16;
+	printf("\n\t\t\t\t\t***Temperature in Kelvine Scale is :: %f K", K);
 }
+
+
 
 
 // Choicing Function
 converter_choice()
 {
 start:
-	printf("If you want to convert Centigrade to Farenhite, Press 1	And then press Enter\n\t\t\tOr,\nIf you want to convert Farenhite to Centigrade, Press 2	And then press Enter\n\n\t\t\t\t\t\t\tYour Choice :: ");
+	printf_s("If you want to convert   Centigrade to Farenhite,  enter 1\n");
+	printf_s("                                    Or,\n");
+	printf_s("If you want to convert   Farenhite to Centigrade,  enter 2\n");
+	printf_s("                                                           Your Choice :: ");
 	int choice;
 	scanf_s("%d", &choice);
 	if (choice == 1)
@@ -65,9 +76,14 @@ start:
 
 
 // Main Fuction
-int main()
+void main()
 {
-	printf("Temperature Converter C programme by ShadyE\n(c) Stan Lab 2016\n\n\n\n");
+	printf("\t\t\t  ____________________________________\n");
+	printf("\t\t\t |Temperature Converter (Beta v3.17.2)|\n");
+	printf("\t\t\t |---------created by ShadyE----------|\n");
+	printf("\t\t\t |---------(c) StanLab 2016-----------|\n");
+	printf("\t\t\t |____________________________________|\n\n\n\n");
+
 start:
 	converter_choice();
 	getchar();
